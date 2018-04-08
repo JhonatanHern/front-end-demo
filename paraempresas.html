@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Demo Page</title>
+	<meta charset="utf-8">
+	<link rel="stylesheet" type="text/css" href="styles/main.css">
+	<link href="https://fonts.googleapis.com/css?family=Rajdhani" rel="stylesheet">
+</head>
+<body>
+	<header class="raj">
+		<nav>
+			<ul>
+				<li>
+					Inicio
+				</li>
+				<li class="collapsed">
+					Secciones
+					<ul class="hiding-menu">
+						<li>Servicios Industriales</li>
+						<li>Servicios PyME</li>
+						<li>Contrataciones</li>
+						<li>Consultoría</li>
+					</ul>
+				</li>
+				<li>
+					Productos
+				</li>
+				<li id="login">
+					Iniciar Sesión
+				</li>
+				<li>
+					Contacto
+				</li>
+			</ul>
+		</nav>
+		<section id="main-logo">
+			<h1 class="raj">ParaEmpresas.com</h1>
+			<div id="white-panel">
+				<div class="holder">
+					<div class="circle"></div>
+					<div class="circle"></div>
+					<div class="circle"></div>
+					<div class="circle"></div>
+					<div class="circle"></div>
+					<div class="circle"></div>
+					<div class="circle"></div>
+					<div class="circle"></div>
+					<div class="circle"></div>
+					<div class="circle"></div>
+					<div class="circle"></div>
+					<div class="circle"></div>
+					<div class="circle"></div>
+					<div class="circle"></div>
+					<div class="circle"></div>
+					<div class="circle"></div>
+				</div>
+			</div>
+			<img id='main-bg' src="imgs/forest.jpg">
+		</section>
+	</header>
+	<main>
+		<section id="tabs-menu"><!--for big screens-->
+			<div data-target="s1">Conócenos</div>
+			<div data-target="s2">Servicios</div>
+			<div data-target="s3">Galería</div>
+			<div data-target="s4">Planes a Futuro</div>
+		</section>
+		<select id="little-selector"><!--for little screens-->
+			<option option="s1">Conócenos</option>
+			<option option="s2">Servicios</option>
+			<option option="s3">Galería</option>
+			<option option="s4">Planes a Futuro</option>
+		</select>
+		<section id="tabs">
+			<section id="s1">
+				<h1>¿Quienes Somos?</h1>
+				<p>
+					Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+					tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+					quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+					consequat.
+				</p>
+				<p>
+					Duis aute irure dolor in reprehenderit in voluptate velit esse
+					cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+					proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+				</p>
+			</section>
+			<section id="s2">
+				<h2>Servicios que Ofrecemos:</h2>
+				<ul>
+					<li>Servicio #1</li>
+					<li>Servicio #2</li>
+					<li>Servicio #3</li>
+					<li>Servicio #4</li>
+					<li>Servicio #5</li>
+					<li>Servicio #6</li>
+					<li>Servicio #7</li>
+				</ul>
+			</section>
+			<section id="s3">
+				<h2>Galería de Imágenes:</h2>
+			</section>
+			<section id="s4">
+				<h2>Planes a Futuro:</h2>
+				<p>
+					Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+					tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+					quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+					consequat.
+				</p>
+				<p>
+					Duis aute irure dolor in reprehenderit in voluptate velit esse
+					cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+					proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+				</p>
+			</section>
+		</section>
+	</main>
+	<footer>
+		página creada por Jhonatan Hernández (<a href="https://github.com/jhonatanhern">github</a>), la empresa mencionada es puramente ficticia.
+	</footer>
+	<script src="scripts/jquery.js"></script>
+	<script src="scripts/effects.js"></script>
+</body>
+</html>
