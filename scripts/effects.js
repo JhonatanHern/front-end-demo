@@ -45,4 +45,22 @@ $(document).ready(function() {
 	}
 	window.addEventListener('resize',resize)
 	resize()
+	function displayOne(code) {
+		console.log(code)
+		$('#tabs section').removeClass('active-section')
+		$('#tabs-menu div').removeClass('active')
+		$('#'+code).addClass('active-section')
+		$('#tabs-menu div[data-target="'+code+'"]').addClass('active')
+	}
+	$('#tabs-menu div').click(function() {
+		displayOne($(this).attr('data-target'))
+		checkAll()
+	})
+	$('.img-click').click(function() {
+		let src = this.parentElement.querySelector('img').src
+		displayImage(src)
+	})
+	function displayImage(src) {
+		window.open(src)
+	}
 })

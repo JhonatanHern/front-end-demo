@@ -6,8 +6,70 @@ body{
 	font-family: 'Century Gothic',sans-serif;
 }
 /*general*/
-.raj{
+.raj ,h1,h2,h3{
 	font-family: 'Rajdhani', sans-serif;
+}
+#hidden-login{
+	animation: fadeIn 1s ease-in-out;
+	position: fixed;
+	left: 0;
+	top: 0;
+	width: 100%;
+	height: 100%;
+	background-color: rgba(0,0,0,.8);
+	z-index: 999999;
+}
+#hidden-login form i{
+	position: absolute;
+	left: 100%;
+	font-style: normal;
+	cursor: pointer;
+	top: 0;
+	transform: translateX(-100%);
+	padding: .3em;
+	font-size: 2em;
+	font-family: 'Rajdhani', sans-serif;
+}
+#hidden-login form{
+	background-color: white;
+	color: #2f0056;
+	position: absolute;
+	display: flex;
+	flex-direction: column;
+	left: 50%;
+	top: 50%;
+	transform:translate(-50%,-50%);
+	min-height: 50vh;
+	max-height: 90vh;
+	min-width: 40vw;
+	max-width: 90vw;
+	padding: 2em;
+}
+#hidden-login form h3{
+	font-size: 1.4em;
+	margin-top: 0;
+	text-align: center;
+}
+#hidden-login form input,#hidden-login form button{
+	margin-bottom: 1em;
+	padding: .5em;
+	width: 100%;
+	font-size: 1.2em;
+	border: 3px solid #2f0056; 
+}
+#hidden-login form button{
+	background-color: #2f0056;
+	color: #ffff6b;
+}
+#tabs section{
+	display: none;
+	padding-left: 10%;
+	padding-right: 10%;
+	padding-top: 2em;
+	padding-bottom: 2em;
+}
+#tabs section.active-section{
+	display: block;
 }
 #main-logo h1{
 	margin: 0;
@@ -45,6 +107,33 @@ footer a{
 }
 /*big screen*/
 @media(min-width: 700px){
+	#tabs h1{
+		font-size:3em;
+		margin-top: 0;
+		margin-bottom: 0; 
+	}
+	#tabs-menu{
+		width: 100%;
+		background-color: #2f0056;
+		display: flex;
+		padding-left: 1em;
+	}
+	#tabs-menu div.active{
+		color: #2f0056;
+		opacity: 1;
+		background-color: white;
+		box-shadow: 0 0 10px white;
+	}
+	#tabs-menu div{
+		cursor: pointer;
+		transition-duration: .4s;
+		padding: .5em;
+		font-size: 1.3em;
+		color: #ffff6b;
+		opacity: .8;
+		background-color: rgba(0,0,0,.4);
+		border-radius: 1em 1em 0 0;
+	}
 	#little-selector{display: none}
 	body > section,footer{
 		width: 100%;
@@ -62,6 +151,7 @@ footer a{
 		height: 10vh;
 		background-color: #2f0056;
 		color: #ffff6b;
+		z-index: 10;
 	}
 	header nav > ul{
 		cursor: pointer;
@@ -104,6 +194,15 @@ footer a{
 	header nav > ul > li ul li{
 		padding: .3em;
 	}
+	main > h2{
+		color: #ffff6b;
+		background-color: #2f0056;
+		width: 100%;
+		margin-top: 0;
+		margin-bottom: 0;
+		font-size: 2em;
+		padding-left: 1em;
+	}
 	.hiding-menu{
 		position: fixed;
 	}
@@ -145,6 +244,43 @@ footer a{
 		z-index: -200;
 		animation: fadeOut .7s ease-in-out;
 		display: none;
+	}
+	#gallery{
+		display: flex;
+		flex-wrap: wrap;
+	}
+	#gallery > div{
+		overflow: hidden;
+		flex-grow: 1;
+		width: 350px;
+		position: relative;
+		max-height: 200px;
+	}
+	#gallery img{
+		width: 100%;
+		max-height: 100%;
+		transition-duration: .5s;
+		object-fit: cover;
+	}
+	#gallery > div div{
+		background-color: rgba(0,0,0,.5);
+		color:white;
+		position: absolute;
+		width: 100%;
+		height: 100%;
+		left: 0;
+		top: 0;
+		opacity: 0;
+		cursor: pointer;
+		transition-duration: .5s;
+		padding: 1em;
+		font-size: 1.2em;
+	}
+	#gallery > div:hover div{
+		opacity: 1;
+	}
+	#gallery > div:hover img{
+		transform: scale(1.3);
 	}
 	footer{
 		padding-top: 1em;

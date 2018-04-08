@@ -1,0 +1,64 @@
+.j-animate{
+	opacity: 0;
+	transition-duration: 0;
+}
+.j-animated{
+	transition-duration: 1s;
+	opacity: 1;
+	animation-duration: 1s;
+	animation-name: bounceInLeft;
+	animation-timing-function: linear;
+	animation-delay: 0s;
+}
+.j-animated.j-right{
+	animation-name: bounceInRight;
+}
+@keyframes fadeIn{
+	from{opacity: 0}
+	to{opacity: 1}
+}
+
+@keyframes bounceInLeft {
+	from, 60%, 75%, 90%, to {
+		animation-timing-function: cubic-bezier(0.215, 0.610, 0.355, 1.000);
+	}
+	0% {
+		opacity: 0;
+		transform: translate3d(-3000px, 0, 0);
+	}
+	60% {
+		opacity: 1;
+		transform: translate3d(25px, 0, 0);
+	}
+	75% {
+		transform: translate3d(-10px, 0, 0);
+	}
+	90% {
+		transform: translate3d(5px, 0, 0);
+	}
+	to {
+		transform: none;
+	}
+}
+@keyframes bounceInRight {
+	from, 60%, 75%, 90%, to {
+		animation-timing-function: cubic-bezier(0.215, 0.610, 0.355, 1.000);
+	}
+	from {
+		opacity: 0;
+		transform: translate3d(3000px, 0, 0);
+	}
+	60% {
+		opacity: 1;
+		transform: translate3d(-25px, 0, 0);
+	}
+	75% {
+		transform: translate3d(10px, 0, 0);
+	}
+	90% {
+		transform: translate3d(-5px, 0, 0);
+	}
+	to {
+		transform: none;
+	}
+}

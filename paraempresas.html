@@ -5,6 +5,7 @@
 	<meta charset="utf-8">
 	<link rel="stylesheet" type="text/css" href="styles/main.css">
 	<link href="https://fonts.googleapis.com/css?family=Rajdhani" rel="stylesheet">
+	<link rel="stylesheet" type="text/css" href="styles/v.css">
 </head>
 <body>
 	<header class="raj">
@@ -60,19 +61,19 @@
 	</header>
 	<main>
 		<section id="tabs-menu"><!--for big screens-->
-			<div data-target="s1">Conócenos</div>
+			<div data-target="s1" class="active">Conócenos</div>
 			<div data-target="s2">Servicios</div>
-			<div data-target="s3">Galería</div>
+			<div data-target="s3">Referencias</div>
 			<div data-target="s4">Planes a Futuro</div>
 		</section>
 		<select id="little-selector"><!--for little screens-->
-			<option option="s1">Conócenos</option>
+			<option option="s1" selected>Conócenos</option>
 			<option option="s2">Servicios</option>
-			<option option="s3">Galería</option>
+			<option option="s3">Referencias</option>
 			<option option="s4">Planes a Futuro</option>
 		</select>
 		<section id="tabs">
-			<section id="s1">
+			<section id="s1" class="active-section j-animate">
 				<h1>¿Quienes Somos?</h1>
 				<p>
 					Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
@@ -86,7 +87,7 @@
 					proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
 				</p>
 			</section>
-			<section id="s2">
+			<section id="s2" class="j-animate">
 				<h2>Servicios que Ofrecemos:</h2>
 				<ul>
 					<li>Servicio #1</li>
@@ -98,10 +99,17 @@
 					<li>Servicio #7</li>
 				</ul>
 			</section>
-			<section id="s3">
-				<h2>Galería de Imágenes:</h2>
+			<section id="s3" class="j-animate">
+				<h2>Referencias:</h2>
+				<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+				tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+				quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+				consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+				cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+				proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+
 			</section>
-			<section id="s4">
+			<section id="s4" class="j-animate">
 				<h2>Planes a Futuro:</h2>
 				<p>
 					Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
@@ -116,11 +124,53 @@
 				</p>
 			</section>
 		</section>
+		<h2>Galería:</h2>
+		<section id="gallery">
+			<div>
+				<img src="imgs/1.jpg">
+				<div class="img-click">Click para ver en grande</div>
+			</div>
+			<div>
+				<img src="imgs/2.jpg">
+				<div class="img-click">Click para ver en grande</div>
+			</div>
+			<div>
+				<img src="imgs/3.jpg">
+				<div class="img-click">Click para ver en grande</div>
+			</div>
+			<div>
+				<img src="imgs/4.jpg">
+				<div class="img-click">Click para ver en grande</div>
+			</div>
+			<div>
+				<img src="imgs/5.jpg">
+				<div class="img-click">Click para ver en grande</div>
+			</div>
+			<div>
+				<img src="imgs/6.jpg">
+				<div class="img-click">Click para ver en grande</div>
+			</div>
+			<div>
+				<img src="imgs/7.jpg">
+				<div class="img-click">Click para ver en grande</div>
+			</div>
+		</section>
 	</main>
 	<footer>
 		página creada por Jhonatan Hernández (<a href="https://github.com/jhonatanhern">github</a>), la empresa mencionada es puramente ficticia.
 	</footer>
+	<section id="hidden-login" style="display: none">
+		<form>
+			<i onclick="$('#hidden-login').css('display','none')">X</i>
+			<h3>Inicia Sesión</h3>
+			<input type="email" placeholder="Email">
+			<input type="password" placeholder="Contraseña">
+			<input type="number" placeholder="Número de Teléfono">
+			<button>Enviar</button>
+		</form>
+	</section>
 	<script src="scripts/jquery.js"></script>
 	<script src="scripts/effects.js"></script>
+	<script src="scripts/v.js"></script>
 </body>
 </html>
