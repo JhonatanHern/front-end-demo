@@ -3,6 +3,7 @@
 <head>
 	<title>Demo Page</title>
 	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="stylesheet" type="text/css" href="styles/main.css">
 	<link href="https://fonts.googleapis.com/css?family=Rajdhani" rel="stylesheet">
 	<link rel="stylesheet" type="text/css" href="styles/v.css">
@@ -10,6 +11,16 @@
 <body>
 	<header class="raj">
 		<nav>
+			<span class="only-little"
+				style="
+					display: block;
+					height: 100%;
+					padding-top: 2vh;
+					font-size: 6vh;
+					margin-left: 1em;"
+				onclick="$('header nav > ul').toggleClass('show')">
+				Menú
+			</span>
 			<ul>
 				<li>
 					Inicio
@@ -21,6 +32,9 @@
 						<li>Servicios PyME</li>
 						<li>Contrataciones</li>
 						<li>Consultoría</li>
+						<li class="only-little"
+							id="mback" 
+							>Atrás</li>
 					</ul>
 				</li>
 				<li>
@@ -56,22 +70,19 @@
 					<div class="circle"></div>
 				</div>
 			</div>
-			<img id='main-bg' src="imgs/forest.jpg">
+			<img src="imgs/forest.jpg" id="i1">
+			<img src="imgs/market.jpg" id="i2" style="display: none">
+			<img src="imgs/town.jpg" id="i3" style="display: none">
+			<img src="imgs/cafe.jpg" id="i4" style="display: none">
 		</section>
 	</header>
 	<main>
-		<section id="tabs-menu"><!--for big screens-->
+		<section id="tabs-menu">
 			<div data-target="s1" class="active">Conócenos</div>
 			<div data-target="s2">Servicios</div>
 			<div data-target="s3">Referencias</div>
 			<div data-target="s4">Planes a Futuro</div>
 		</section>
-		<select id="little-selector"><!--for little screens-->
-			<option option="s1" selected>Conócenos</option>
-			<option option="s2">Servicios</option>
-			<option option="s3">Referencias</option>
-			<option option="s4">Planes a Futuro</option>
-		</select>
 		<section id="tabs">
 			<section id="s1" class="active-section j-animate">
 				<h1>¿Quienes Somos?</h1>

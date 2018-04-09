@@ -3,13 +3,20 @@ const galleryPhotoDuration = 5000
 $(document).ready(function() {
 	//these two functions show and hide the sub-menu on the nav-bar
 	$('.collapsed').mouseenter(function() {
-		$('.hiding-menu').slideToggle('fast')
+		if (window.innerWidth >699)
+			$('.hiding-menu').slideToggle('fast')
 	})
 	$('.collapsed').mouseleave(function() {
-		$('.hiding-menu').slideToggle('fast')
+		if (window.innerWidth >699)
+			$('.hiding-menu').slideToggle('fast')
 	})
-
-
+	$('.collapsed').click(function(e) {
+		if (e.target!==this && e.target.id!=='mback') {
+			return
+		}
+		if (window.innerWidth<=700)
+			$('.hiding-menu').toggleClass('show')
+	})
 	var $img = $('#main-bg'),//background image
 		counter = 0,
 		bgList = [//array of strings containing images to use in main slider
@@ -22,16 +29,9 @@ $(document).ready(function() {
 	//this function uses timers in order to control the movcement of the slider's images
 	setInterval(function() {
 		counter++
-		setTimeout(function() {//add 'leaving' effect
-			$img.addClass('leaving')
-		} , galleryPhotoDuration - 700)
+		$('#main-logo img').css('display','none')
+		$('#i'+(counter%4+1)).css('display','block')
 
-		setTimeout(function() {//change image
-			$img.removeClass('leaving')
-			$img.css('display','none')
-			$img.attr('src', 'imgs/' + bgList[ counter % bgList.length ] )
-			$img.css('display','block')
-		} , galleryPhotoDuration)
 	} , galleryPhotoDuration)
 
 	//show the hidden form

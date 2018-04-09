@@ -9,6 +9,20 @@ body{
 .raj ,h1,h2,h3{
 	font-family: 'Rajdhani', sans-serif;
 }
+/*animation*/
+	#main-logo img{
+		z-index: -200;
+		animation: fadeIn 2s ease-in-out;
+	}
+	/*#main-bg.leaving{
+		z-index: -200;
+		animation: fadeOut .7s ease-in-out;
+		display: none;
+	}*/
+header nav{
+	background-color: #2f0056;
+	color: #ffff6b;
+}
 #hidden-login{
 	animation: fadeIn 1s ease-in-out;
 	position: fixed;
@@ -71,18 +85,6 @@ body{
 #tabs section.active-section{
 	display: block;
 }
-#main-logo h1{
-	margin: 0;
-	color:#ffff6b;
-	width: 100%;
-	position: absolute;
-	top: 50%;
-	left: 50%;
-	font-size: 6em;
-	transform: translate(-50%,-50%);
-	text-align: center;
-	z-index: 1100;
-}
 footer{
 	/*background-image:linear-gradient(90deg ,#ccc,#fff,#ccc);*/
 	background-color: #2f0056;
@@ -103,10 +105,141 @@ footer a{
  
 /*small screen*/
 @media(max-width: 699px){
-	#tabs-menu{display: none}
+	#hiding-menu{
+		position: fixed;
+		left: -100vw;
+		top: 10vh;
+		width: 100vw;
+		height: 90vh;
+		cursor: pointer;
+	}
+	#tabs-menu{
+		padding: 1em;
+		text-decoration:underline;
+		background-color: #2f0056;
+		color:#ffff6b;
+	}
+	#tabs h1,#tabs h2{
+		margin-top: 0;
+	}
+	#tabs-menu div{
+		padding: .5em;
+	}
+	#tabs-menu div.active{
+		background-color: white;
+		color: #2f0056;
+		transition-duration: .5s;
+		border-radius: .5em;
+		box-shadow: 0 0 10px white;
+	}
+	#hidden-login form{
+		width: 90vw;
+	}
+	.holder{
+	}
+	header nav{
+		position: fixed;
+		left: 0;
+		top: 0;
+		width: 100%;
+		height: 10vh;
+	}
+	header nav ul{
+		transition-duration: .5s;
+		transition-timing-function: ease-in-out;
+		position: fixed;
+		height: 90vh;
+		width: 100vw;
+		left: -100vw;
+		margin-top: 0;
+		top: 10vh;
+		padding-left: 0;
+		list-style: none;
+		display: flex;
+		flex-direction: column;
+	}
+	header nav ul.show{
+		left: 0;
+	}
+	header nav ul li{
+		flex-grow: 1;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		background-color:#2f0056;
+		color: #ffff6b;
+		font-size: 1.3em;
+	}
+	#main-logo{
+		z-index: -1;
+		margin-top: 10vh;
+		height: 90vh;
+		overflow: hidden;
+		position: relative;
+	}
+	#white-panel{
+		width: 100%;
+		position: absolute;
+		left: 0;
+		top: 50%;
+		transform: translateY(-50%);
+		height: 70%;
+		z-index: 10;
+		background-color: rgba(47,0,86,.6);
+	}
+	#main-logo img{
+		height: 90vh;
+		width: 100vw;
+		object-fit: cover;
+	}
+	#main-logo h1{
+		width: 100%;
+		position: absolute;
+		left: 0;
+		font-size: 2em;
+		top: 50%;
+		transform: translateY(-50%);
+		z-index: 1000;
+		margin-top: 0;
+		text-align: center;
+		color: #ffff6b;
+	}
+	#little-selector{
+		display: none;
+		width: 90%;
+		margin-left: 5%;
+		border: 3px solid #2f0056;
+		font-size: 1.1em;
+		margin-top: 1em;
+	}
+	#gallery img{
+		width: 100%;
+	}
+	main > h2{
+		margin-top: 0;
+		margin-bottom: 0;
+		padding: .5em;
+		background-color: #2f0056;
+		color: #ffff6b;
+	}
+
+	#gallery > div div{
+		padding-bottom: 1em;
+		padding: .5em;
+		text-decoration: underline;
+		background-color:#2f0056;
+		margin-top: -5px;
+		color: #ffff6b; 
+	}
+	footer{
+		padding: .5em;
+		text-align: center;
+		padding-top: 2em;
+	}
 }
 /*big screen*/
 @media(min-width: 700px){
+	.only-little{display: none!important}
 	#tabs h1{
 		font-size:3em;
 		margin-top: 0;
@@ -149,13 +282,13 @@ footer a{
 		top: 0;
 		left: 0;
 		height: 10vh;
-		background-color: #2f0056;
-		color: #ffff6b;
+		width: 100%;
 		z-index: 10;
 	}
 	header nav > ul{
 		cursor: pointer;
 		display: flex;
+		position: relative;
 		margin-left: 0;
 		list-style: none;
 		padding-right: 1em;
@@ -212,6 +345,18 @@ footer a{
 		height: 90vh;
 		position: relative;
 	}
+	#main-logo h1{
+		margin: 0;
+		color:#ffff6b;
+		width: 100%;
+		position: absolute;
+		top: 50%;
+		left: 50%;
+		font-size: 6em;
+		transform: translate(-50%,-50%);
+		text-align: center;
+		z-index: 1100;
+	}
 	#main-logo img{
 		width: 100%;
 		height: 100%;
@@ -226,24 +371,6 @@ footer a{
 		height: 70%;
 		z-index: 1000;
 		background-color: rgba(47,0,86,.6);
-	}
-	#white-panel canvas{
-		height: 100%;
-		width: 50%;
-		position: relative;
-		transform: translateX(-50%);
-		left: 50%;
-		top: 0;
-		background-color: transparent;
-	}
-	#main-bg{
-		z-index: -200;
-		animation: fadeIn .7s ease-in-out;
-	}
-	#main-bg.leaving{
-		z-index: -200;
-		animation: fadeOut .7s ease-in-out;
-		display: none;
 	}
 	#gallery{
 		display: flex;
